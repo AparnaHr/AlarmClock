@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#566573"
+    android:layout_height="match_parent"
+    tools:context=".QuestionsActivity">
+
+    <EditText
+        android:id="@+id/idAnswer"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="176dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#3498DB"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="185dp" />
+
+    <TextView
+        android:id="@+id/idQuestion"
+        android:layout_width="274dp"
+        android:layout_height="76dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/idAnswer"
+        android:layout_marginTop="62dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="53dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/idCheck"
+        android:layout_width="76dp"
+        android:layout_height="72dp"
+        android:layout_alignBottom="@+id/idAnswer"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="-16dp"
+        android:layout_marginEnd="82dp"
+        android:clickable="true"
+        android:foregroundGravity="center"
+        android:src="@drawable/check" />
+
+</RelativeLayout>
