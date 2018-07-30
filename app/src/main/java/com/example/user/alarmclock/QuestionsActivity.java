@@ -9,6 +9,7 @@ import android.media.Image;
 import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.IInterface;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -80,8 +81,8 @@ public class QuestionsActivity extends AppCompatActivity {
                     String setTime = getIntent().getStringExtra("Alarm time");
                     realm.executeTransaction(realm -> {
                         RealmResults<Alarm> results = realm.where(Alarm.class).equalTo("alarmTime", setTime).findAll();
-                        //int requestCode = results.first().getRequestCode();
-                        Log.i("deleting alarm","alarm deleted");
+                        int req = results.first().getRequestCode();
+                        Log.i("deleting alarm","alarm "+ req +" deleted");
                         results.deleteAllFromRealm();
                     });
                     Toast.makeText(QuestionsActivity.this, "Correct answer!", Toast.LENGTH_LONG).show();

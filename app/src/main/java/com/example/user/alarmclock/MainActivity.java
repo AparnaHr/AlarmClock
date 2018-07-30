@@ -119,13 +119,14 @@ public class MainActivity extends AppCompatActivity {
         Log.i("Alarm Manager","Intent");*/
 
         //create pending intent
-        Intent alarmIntent = new Intent(getBaseContext(), QuestionsActivity.class);
-        alarmIntent.putExtra("Alarm time", setTime);
-        pendingIntent = PendingIntent.getActivity(getBaseContext(), requestCode, alarmIntent, 0);
 
         //Computing Primary key and Request code
         PRIMARY_KEY = Integer.parseInt(String.format("%02d", hour)+String.format("%02d", min));
         RQS_1 = PRIMARY_KEY;
+
+        Intent alarmIntent = new Intent(getBaseContext(), QuestionsActivity.class);
+        alarmIntent.putExtra("Alarm time", setTime);
+        pendingIntent = PendingIntent.getActivity(getBaseContext(), RQS_1, alarmIntent, 0);
 
         //adding alarm to the database
         realm.executeTransaction((Realm realm) -> {
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             alarm.setRequestCode(RQS_1);
         });
         adapter.updateAdapter(alarm);
-        Log.i("new alarm","alarm "+ PRIMARY_KEY + " added");
+        Log.i("new alarm","alarm "+ PRIMARY_KEY + " added with request code "+RQS_1);
 
         //set up alarmManager to fire the alarm
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
