@@ -118,13 +118,12 @@ public class MainActivity extends AppCompatActivity {
         alarmManager.setExact(AlarmManager.RTC_WAKEUP,timeInMillis,pendingIntent);
         Log.i("Alarm Manager","Intent");*/
 
-        //create pending intent
 
         //Computing Primary key and Request code
         PRIMARY_KEY = Integer.parseInt(String.format("%02d", hour)+String.format("%02d", min));
         RQS_1 = PRIMARY_KEY;
 
-        Intent alarmIntent = new Intent(getBaseContext(), QuestionsActivity.class);
+        Intent alarmIntent = new Intent(getApplicationContext(), QuestionsActivity.class);
         alarmIntent.putExtra("Alarm time", setTime);
         pendingIntent = PendingIntent.getActivity(getBaseContext(), RQS_1, alarmIntent, 0);
 

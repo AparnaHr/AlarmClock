@@ -82,7 +82,7 @@ public class QuestionsActivity extends AppCompatActivity {
                     realm.executeTransaction(realm -> {
                         RealmResults<Alarm> results = realm.where(Alarm.class).equalTo("alarmTime", setTime).findAll();
                         int req = results.first().getRequestCode();
-                        Log.i("deleting alarm","alarm "+ req +" deleted");
+                        Log.i("deleting alarm","alarm "+ req +" deleted from realm database");
                         results.deleteAllFromRealm();
                     });
                     Toast.makeText(QuestionsActivity.this, "Correct answer!", Toast.LENGTH_LONG).show();
@@ -123,7 +123,7 @@ public class QuestionsActivity extends AppCompatActivity {
         //Toast.makeText(getApplicationContext(), "You can't Escape!", Toast.LENGTH_SHORT).show();
         ActivityManager activityManager = (ActivityManager) getApplicationContext()
                 .getSystemService(Context.ACTIVITY_SERVICE);
-       // activityManager.moveTaskToFront(getTaskId(), 0);
+        activityManager.moveTaskToFront(getTaskId(), 0);
         Log.i("Inside", "onpause");
 
     }

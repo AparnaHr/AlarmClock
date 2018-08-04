@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#566573"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/idName"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -20,12 +19,22 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic" />  -->
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fadingEdge="horizontal"
+        android:scaleType="centerCrop"
+        android:src="@drawable/alarmquote" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="10">
+        android:background="@drawable/background"
+        android:layout_weight="2">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/idRecycleView"
@@ -42,10 +51,10 @@
             android:layout_height="67dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:backgroundTint="#3498DB"
-            app:borderWidth="0dp"
             android:layout_marginBottom="28dp"
-            android:src="@drawable/alarmadd" />
+            android:backgroundTint="#3498DB"
+            android:src="@drawable/alarmadd"
+            app:borderWidth="0dp" />
 
     </RelativeLayout>
 
